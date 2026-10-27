@@ -1,0 +1,14 @@
+{
+  "name": "secao4",
+  "version": "1.0.0",
+  "description": "Improved Development Workflow and Debugging",
+  "license": "ISC",
+  "author": "Matheus Sinis",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start-server": "node server.js"
+  }
+}
