@@ -1,15 +1,18 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.get('/add-product', (req, res, next) => {
-    console.log('In the middleware!');
-    res.send('<h1>The "Add Product" Page</h1>');
-});
+const shopRoutes = require('./routes/shop');
+const adminRoutes = require('./routes/admin');
 
-app.get('/', (req, res, next) => {
-    console.log('In another middleware!');
-    res.send('<h1>Hello from Express!</h1>');
+app.use(bodyParser.urlencoded());
+
+app.use(shopRoutes);
+app.use('/admin', adminRoutes);
+
+app.use((req, res, next) => {
+    res.status(404).send('<h1>Page not found</h1>');
 });
 
 app.listen(3000);
