@@ -6,9 +6,9 @@ const server = http.createServer((req, res) => {
     const method = req.method;
 
     if (url === '/') {
-        res.write('<html>')
+        res.write('<html>');
         res.write('<h1>Welcome to my page!</h1>');
-        res.write('<form action="/create-user" method="POST"><input type="text" name="username"><button type="submit">Send</button></form>')
+        res.write('<form action="/create-user" method="POST"><input type="text" name="username"><button type="submit">Send</button></form>');
         res.write('</html>');
         return res.end();
     } else if (url === '/users') {
